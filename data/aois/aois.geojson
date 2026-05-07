@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "aois",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "ebro_delta", "description": "Ebro Delta — sediment-starved delta with active retreat in the southern hemidelta (Punta de la Banya) and accretion in the northern (Punta del Fangar)." }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 0.95, 40.55 ], [ 0.95, 40.85 ], [ 0.5, 40.85 ], [ 0.5, 40.55 ], [ 0.95, 40.55 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "maresme", "description": "Maresme coast — Mongat to Blanes, north of Barcelona; chronic-deficit pocket beaches with the railway line at the back of the beach." }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 2.9, 41.4 ], [ 2.9, 41.75 ], [ 2.25, 41.75 ], [ 2.25, 41.4 ], [ 2.9, 41.4 ] ] ] } }
+]
+}

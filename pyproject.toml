@@ -1,0 +1,70 @@
+[project]
+name = "gfm-coasts"
+version = "0.1.0"
+description = "Geographic Foundation Models applied to coastal erosion along the Catalan coast (Ebro Delta + Maresme), with literature-referenced classical comparisons."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+authors = [{ name = "James Murphy" }]
+dependencies = [
+    # geospatial core
+    "geopandas",
+    "rasterio",
+    "rioxarray",
+    "xarray",
+    "shapely",
+    "pyproj",
+    "fiona",
+    # data
+    "numpy",
+    "pandas",
+    "dask",
+    "zarr",
+    # plotting / maps
+    "matplotlib",
+    "folium",
+    "contextily",
+    "leafmap",
+    # STAC / EO
+    "pystac-client",
+    "stackstac",
+    "planetary-computer",
+    "earthaccess",
+    "copernicusmarine",
+    # ML stack (CPU-friendly default; override with cuda build on HPC)
+    "torch",
+    "torchvision",
+    # image processing (Otsu, contours, morphology)
+    "scikit-image",
+    # OGC services — used for ICGC WCS DEM fetch
+    "owslib",
+    # notebooks
+    "jupyterlab",
+    "ipykernel",
+    "ipywidgets",
+    "jupytext",  # paired .ipynb + .py for clean git diffs
+    # utils
+    "tqdm",
+    "requests",
+]
+
+[project.optional-dependencies]
+# Heavy GFM frameworks. Install on demand:
+#   uv sync --extra gfm
+gfm = [
+    "claymodel",      # Clay v1.5 inference
+    "terratorch",     # IBM framework, supports Prithvi-EO-2.0
+    "torchgeo",       # general EO + GFM utilities
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pytest",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
