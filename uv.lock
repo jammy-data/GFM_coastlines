@@ -570,7 +570,7 @@ wheels = [
 [[package]]
 name = "claymodel"
 version = "1.5.0"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/Clay-foundation/model.git#f14e698f3c237cabf8d28dec669a362d66625381" }
 dependencies = [
     { name = "einops" },
     { name = "geopandas" },
@@ -585,10 +585,6 @@ dependencies = [
     { name = "torchvision" },
     { name = "vit-pytorch" },
     { name = "wandb" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/0f/0e/5b7cf32e185ccc191b9f747d13d831d5087f023f7c75285ac3233a26aa5a/claymodel-1.5.0.tar.gz", hash = "sha256:84a912588a7d225b7119300a8b3ff1cea0014bebe38172f5bcdd4e1a04c7dd37", size = 20930, upload-time = "2025-05-28T13:50:12.703Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ec/4a/621b337ec5e5c5785729a290936ddec22b822b6f42329ff2778413afc97f/claymodel-1.5.0-py3-none-any.whl", hash = "sha256:fa2edc0b94d2c578e65e62797a7a342ffb85eba78662c5dcd20ecfae43bd279f", size = 22240, upload-time = "2025-05-28T13:50:11.514Z" },
 ]
 
 [[package]]
@@ -1288,7 +1284,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "claymodel", marker = "extra == 'gfm'" },
+    { name = "claymodel", marker = "extra == 'gfm'", git = "https://github.com/Clay-foundation/model.git" },
     { name = "contextily" },
     { name = "copernicusmarine" },
     { name = "dask" },

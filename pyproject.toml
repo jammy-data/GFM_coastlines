@@ -51,7 +51,11 @@ dependencies = [
 # Heavy GFM frameworks. Install on demand:
 #   uv sync --extra gfm
 gfm = [
-    "claymodel",      # Clay v1.5 inference
+    # Clay v1.5 inference. The PyPI release 1.5.0 ships Clay's modules at the
+    # top level (no `claymodel` package directory), so `import claymodel` fails.
+    # Installing from git puts everything under the correct `claymodel` namespace.
+    # See: https://clay-foundation.github.io/model/getting-started/quickstart.html
+    "claymodel @ git+https://github.com/Clay-foundation/model.git",
     "terratorch",     # IBM framework, supports Prithvi-EO-2.0
     "torchgeo",       # general EO + GFM utilities
 ]
